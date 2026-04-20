@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Anjali Tripathi | Geopolitics & ESG</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0d0f14;
+  --navy2:#12151c;
+  --navy3:#1a1e28;
+  --gold:#c8972a;
+  --gold2:#e0ab3a;
+  --green:#2d6a4f;
+  --green2:#40916c;
+  --green3:#52b788;
+  --green4:#d8f3dc;
+  --cream:#f5f0e8;
+  --muted:#8a8fa3;
+  --border:#2a2f3e;
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--cream);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,15,20,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold);letter-spacing:0.02em}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{background:var(--gold);color:var(--navy);padding:8px 20px;border-radius:2px;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--gold2);color:var(--navy)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:120px 5% 80px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.25}
+.hero-glow{position:absolute;top:-200px;right:-100px;width:700px;height:700px;background:radial-gradient(ellipse,rgba(45,106,79,0.12) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(ellipse,rgba(200,151,42,0.08) 0%,transparent 65%);pointer-events:none}
+/* Animated particles */
+.particles{position:absolute;inset:0;overflow:hidden}
+.particle{position:absolute;width:2px;height:2px;background:var(--green3);border-radius:50%;animation:float linear infinite;opacity:0}
+@keyframes float{0%{transform:translateY(100vh) translateX(0);opacity:0}10%{opacity:0.6}90%{opacity:0.3}100%{transform:translateY(-10vh) translateX(40px);opacity:0}}
+
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%}
+.hero-eyebrow{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green3);font-weight:500;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--green3)}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);line-height:1.08;color:var(--cream);margin-bottom:0.3rem}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:560px;margin-top:1.2rem;margin-bottom:2.5rem;line-height:1.8}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:3rem}
+.tag{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;padding:5px 14px;border:1px solid;border-radius:2px;font-weight:500}
+.tag-gold{border-color:var(--gold);color:var(--gold)}
+.tag-green{border-color:var(--green3);color:var(--green3)}
+.tag-muted{border-color:var(--border);color:var(--muted)}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--navy);padding:12px 28px;border-radius:2px;font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:background 0.2s}
+.btn-primary:hover{background:var(--gold2)}
+.btn-outline{border:1px solid var(--border);color:var(--cream);padding:12px 28px;border-radius:2px;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:border-color 0.2s,color 0.2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* STAT CARDS */
+.stat-strip{position:relative;z-index:1;margin-top:4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.stat-card{background:var(--navy2);padding:1.5rem 1.8rem;transition:background 0.2s}
+.stat-card:hover{background:var(--navy3)}
+.stat-label{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
+.stat-value{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--cream);margin-bottom:0.2rem}
+.stat-desc{font-size:0.8rem;color:var(--muted)}
+.stat-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green3);margin-right:6px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* SECTION STRUCTURE */
+section{padding:80px 5%}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--cream);line-height:1.2;margin-bottom:1.2rem}
+
+/* DOMAIN STRIP */
+.domain-strip{background:var(--navy2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0 5%}
+.domain-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border)}
+.domain-item{background:var(--navy2);padding:1.8rem 1.2rem;text-align:center;transition:background 0.2s;cursor:default}
+.domain-item:hover{background:var(--navy3)}
+.domain-icon{font-size:1.4rem;margin-bottom:0.7rem;display:block}
+.domain-name{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--cream);margin-bottom:0.3rem}
+.domain-desc{font-size:0.72rem;color:var(--muted);line-height:1.5}
+
+/* FEATURED ARTICLE */
+.featured{background:var(--navy2);border:1px solid var(--border);border-radius:4px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;transition:border-color 0.2s}
+.featured:hover{border-color:var(--gold)}
+.featured-content{padding:3rem}
+.featured-badge{display:inline-block;background:var(--green);color:var(--green4);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;padding:4px 12px;border-radius:2px;margin-bottom:1.2rem;font-weight:600}
+.featured-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--cream);line-height:1.2;margin-bottom:1rem}
+.featured-excerpt{color:var(--muted);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem}
+.featured-meta{font-size:0.75rem;color:var(--muted);letter-spacing:0.08em}
+.featured-visual{background:var(--navy3);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:300px}
+.map-visual{width:100%;height:100%;position:relative}
+
+/* WORKS GRID */
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:2.5rem}
+.work-card{background:var(--navy2);padding:2rem 1.8rem;transition:background 0.2s;cursor:pointer}
+.work-card:hover{background:var(--navy3)}
+.work-type{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green3);margin-bottom:0.8rem;font-weight:500}
+.work-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--cream);line-height:1.4;margin-bottom:0.8rem}
+.work-desc{font-size:0.82rem;color:var(--muted);line-height:1.6}
+.work-arrow{margin-top:1.2rem;font-size:0.8rem;color:var(--gold);font-weight:500}
+
+/* ESG SECTION */
+.esg-section{background:var(--navy2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.esg-intro{color:var(--muted);font-size:0.95rem;max-width:600px;margin-bottom:3rem;line-height:1.8}
+.esg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.esg-card{padding:2.5rem 2rem}
+.esg-e{background:rgba(45,106,79,0.15)}
+.esg-s{background:rgba(200,151,42,0.08)}
+.esg-g{background:rgba(42,47,62,0.5)}
+.esg-letter{font-family:'Playfair Display',serif;font-size:4rem;line-height:1;margin-bottom:0.5rem;font-weight:700}
+.esg-e .esg-letter{color:var(--green3)}
+.esg-s .esg-letter{color:var(--gold)}
+.esg-g .esg-letter{color:var(--muted)}
+.esg-name{font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;margin-bottom:1rem;color:var(--cream)}
+.esg-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.esg-list li{font-size:0.82rem;color:var(--muted);padding-left:1rem;position:relative;line-height:1.5}
+.esg-list li::before{content:'—';position:absolute;left:0;color:inherit;opacity:0.5}
+.esg-e .esg-list li::before{color:var(--green3)}
+.esg-s .esg-list li::before{color:var(--gold)}
+
+/* RESEARCH */
+.research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:2.5rem}
+.research-item{background:var(--navy2);padding:1.5rem 1.8rem;display:flex;gap:1.2rem;align-items:flex-start;transition:background 0.2s}
+.research-item:hover{background:var(--navy3)}
+.research-num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--border);line-height:1;font-weight:700;min-width:2.5rem}
+.research-text{font-size:0.85rem;color:var(--muted);line-height:1.6}
+.research-text strong{color:var(--cream);font-weight:500;display:block;margin-bottom:0.2rem}
+
+/* ABOUT / CONTACT */
+.about-grid{display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start}
+.about-text p{color:var(--muted);font-size:0.93rem;line-height:1.9;margin-bottom:1rem}
+.about-text p:first-child{font-size:1.05rem;color:var(--cream)}
+.contact-card{background:var(--navy2);border:1px solid var(--border);border-radius:4px;padding:2rem;position:sticky;top:90px}
+.contact-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);margin-bottom:0.4rem}
+.contact-sub{font-size:0.8rem;color:var(--muted);margin-bottom:1.5rem}
+.contact-link{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--muted);font-size:0.83rem;transition:color 0.2s}
+.contact-link:last-of-type{border-bottom:none}
+.contact-link:hover{color:var(--gold)}
+.contact-icon{width:16px;height:16px;opacity:0.5}
+.contact-cta{margin-top:1.2rem;display:block;text-align:center;background:var(--gold);color:var(--navy);padding:10px;border-radius:2px;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:background 0.2s}
+.contact-cta:hover{background:var(--gold2)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem 5%;text-align:center}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-family:'Playfair Display',serif;color:var(--gold);font-size:0.9rem}
+.footer-text{font-size:0.75rem;color:var(--muted)}
+
+/* SCROLL ANIMATION */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* SVG map */
+.globe-svg{width:100%;height:100%;opacity:0.6}
+
+@media(max-width:900px){
+  .stat-strip{grid-template-columns:1fr}
+  .domain-inner{grid-template-columns:repeat(2,1fr)}
+  .featured{grid-template-columns:1fr}
+  .works-grid{grid-template-columns:1fr}
+  .esg-grid{grid-template-columns:1fr}
+  .research-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Anjali Tripathi</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#esg">ESG</a>
+      <a href="#research">Research</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Geopolitics · ESG · Policy · Risk</p>
+    <h1 class="hero-h1">Mapping Power,<br/>Policy &amp; <em>Global Systems</em></h1>
+    <p class="hero-sub">Geopolitical and policy analyst at the intersection of governance, conflict, and development — with a growing focus on ESG, corporate sustainability, and supply chain politics.</p>
+    <div class="hero-tags">
+      <span class="tag tag-green">ESG &amp; Corporate Sustainability</span>
+      <span class="tag tag-gold">Geopolitical Risk</span>
+      <span class="tag tag-muted">Indo-Pacific Strategy</span>
+      <span class="tag tag-muted">Supply Chain Politics</span>
+      <span class="tag tag-muted">Public Policy</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#works" class="btn-primary">View Works</a>
+      <a href="#about" class="btn-outline">About Me</a>
+    </div>
+
+    <!-- STAT STRIP -->
+    <div class="stat-strip">
+      <div class="stat-card">
+        <div class="stat-label"><span class="stat-dot"></span>Current Focus</div>
+        <div class="stat-value">ESG &amp; Geopolitics</div>
+        <div class="stat-desc">Corporate sustainability, climate risk &amp; governance</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Latest Work</div>
+        <div class="stat-value">Bangladesh 2025</div>
+        <div class="stat-desc">Climate &amp; political fragility risk report</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Expertise</div>
+        <div class="stat-value">5+ Domains</div>
+        <div class="stat-desc">Risk · Policy · OSINT · Development · IPE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAIN STRIP -->
+<div class="domain-strip">
+  <div class="domain-inner">
+    <div class="domain-item">
+      <span class="domain-icon" style="color:var(--green3)">🌿</span>
+      <div class="domain-name">ESG &amp; CSR</div>
+      <div class="domain-desc">Sustainability, climate disclosure, governance</div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-icon" style="color:var(--gold)">🌐</span>
+      <div class="domain-name">Geopolitical Risk</div>
+      <div class="domain-desc">Conflict, power dynamics, strategic affairs</div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-icon" style="color:var(--green3)">⛓️</span>
+      <div class="domain-name">Supply Chains</div>
+      <div class="domain-desc">Semiconductors, trade, chokepoints</div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-icon" style="color:var(--gold)">🏛️</span>
+      <div class="domain-name">Public Policy</div>
+      <div class="domain-desc">Governance, institutions, development</div>
+    </div>
+    <div class="domain-item">
+      <span class="domain-icon" style="color:var(--green3)">📊</span>
+      <div class="domain-name">IPE &amp; OSINT</div>
+      <div class="domain-desc">Political economy, open-source intelligence</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED WORK -->
+<section id="featured" style="padding:80px 5%">
+  <div class="section-inner">
+    <p class="section-label reveal">Featured Analysis</p>
+    <div class="featured reveal">
+      <div class="featured-content">
+        <div class="featured-badge">Risk Report · 2025</div>
+        <h2 class="featured-title">Bangladesh: Climate &amp; Political Fragility in 2025</h2>
+        <p class="featured-excerpt">An integrated risk assessment examining how climate-driven displacement, resource stress, and institutional fragility compound political volatility in Bangladesh — with implications for regional stability and development policy.</p>
+        <p class="featured-meta">Political Risk · Climate Security · South Asia · Humanitarian</p>
+        <a href="#" class="btn-primary" style="display:inline-block;margin-top:1.5rem">Read Report →</a>
+      </div>
+      <div class="featured-visual">
+        <!-- Animated SVG globe/map placeholder -->
+        <svg viewBox="0 0 400 300" class="globe-svg" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#2d6a4f" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#0d0f14" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="200" cy="150" rx="140" ry="140" fill="url(#glow)"/>
+          <!-- Globe lines -->
+          <ellipse cx="200" cy="150" rx="120" ry="120" fill="none" stroke="#2d6a4f" stroke-width="0.5" opacity="0.4"/>
+          <ellipse cx="200" cy="150" rx="120" ry="40" fill="none" stroke="#2d6a4f" stroke-width="0.5" opacity="0.4"/>
+          <ellipse cx="200" cy="150" rx="120" ry="80" fill="none" stroke="#2d6a4f" stroke-width="0.5" opacity="0.3"/>
+          <line x1="200" y1="30" x2="200" y2="270" stroke="#2d6a4f" stroke-width="0.5" opacity="0.4"/>
+          <line x1="80" y1="150" x2="320" y2="150" stroke="#2d6a4f" stroke-width="0.5" opacity="0.4"/>
+          <line x1="110" y1="80" x2="290" y2="220" stroke="#2d6a4f" stroke-width="0.5" opacity="0.2"/>
+          <line x1="110" y1="220" x2="290" y2="80" stroke="#2d6a4f" stroke-width="0.5" opacity="0.2"/>
+          <!-- Bangladesh hotspot -->
+          <circle cx="270" cy="145" r="5" fill="#52b788" opacity="0.9">
+            <animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.9;0.4;0.9" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="270" cy="145" r="3" fill="#52b788"/>
+          <text x="278" y="142" fill="#52b788" font-size="9" font-family="Inter,sans-serif" opacity="0.8">Bangladesh</text>
+          <!-- Other dots -->
+          <circle cx="180" cy="110" r="2.5" fill="#c8972a" opacity="0.7"/>
+          <circle cx="150" cy="160" r="2" fill="#c8972a" opacity="0.5"/>
+          <circle cx="240" cy="175" r="2" fill="#52b788" opacity="0.6"/>
+          <circle cx="200" cy="130" r="2" fill="#c8972a" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works" style="padding:60px 5% 80px">
+  <div class="section-inner">
+    <p class="section-label reveal">All Works</p>
+    <h2 class="section-title reveal">Analysis &amp; Writing</h2>
+    <div class="works-grid reveal">
+      <div class="work-card">
+        <div class="work-type">Disarmament · Security</div>
+        <h3 class="work-title">Orphans of the Disarmament Dream</h3>
+        <p class="work-desc">Examining the governance vacuum left by stalled multilateral disarmament frameworks and its consequences for global security architecture.</p>
+        <p class="work-arrow">Read → </p>
+      </div>
+      <div class="work-card">
+        <div class="work-type">Taiwan Strait · Risk</div>
+        <h3 class="work-title">Taiwan Strait Crisis: Scenario Mapping</h3>
+        <p class="work-desc">A structured political risk analysis of escalation scenarios in the Taiwan Strait and implications for Indo-Pacific stability.</p>
+        <p class="work-arrow">Read →</p>
+      </div>
+      <div class="work-card">
+        <div class="work-type">Supply Chain · Tech Policy</div>
+        <h3 class="work-title">The Geopolitics of Semiconductors</h3>
+        <p class="work-desc">How semiconductor chokepoints — from TSMC to ASML — have become the defining battleground of great power competition.</p>
+        <p class="work-arrow">Read →</p>
+      </div>
+      <div class="work-card">
+        <div class="work-type">Digital Trade · EU-India</div>
+        <h3 class="work-title">India–EU: Digital Bridges</h3>
+        <p class="work-desc">Mapping the digital economy negotiations between India and the EU and their implications for data governance and tech sovereignty.</p>
+        <p class="work-arrow">Read →</p>
+      </div>
+      <div class="work-card">
+        <div class="work-type">Migration · Humanitarian</div>
+        <h3 class="work-title">Rohingya: Gendered Displacement</h3>
+        <p class="work-desc">Fieldwork-based analysis of gendered vulnerabilities in post-conflict Rohingya refugee communities in Delhi.</p>
+        <p class="work-arrow">Read →</p>
+      </div>
+      <div class="work-card" style="background:var(--navy3);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);margin-bottom:0.5rem">+</div>
+        <p style="font-size:0.85rem;color:var(--muted)">More works in progress</p>
+        <a href="#contact" style="color:var(--gold);font-size:0.8rem;margin-top:0.5rem;text-decoration:none">Get in touch →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESG SECTION -->
+<section class="esg-section" id="esg" style="padding:80px 5%">
+  <div class="section-inner">
+    <p class="section-label reveal">Corporate Sustainability</p>
+    <h2 class="section-title reveal">ESG &amp; Climate Risk Lens</h2>
+    <p class="esg-intro reveal">I apply geopolitical and policy analysis frameworks to corporate sustainability — examining how environmental stress, social fragility, and governance gaps drive institutional and market risk.</p>
+    <div class="esg-grid reveal">
+      <div class="esg-card esg-e">
+        <div class="esg-letter">E</div>
+        <div class="esg-name">Environmental</div>
+        <ul class="esg-list">
+          <li>Climate-driven conflict &amp; displacement</li>
+          <li>Resource scarcity &amp; food security</li>
+          <li>Just transition in the Global South</li>
+          <li>Carbon risk in supply chains</li>
+          <li>Sustainability disclosure &amp; TCFD</li>
+        </ul>
+      </div>
+      <div class="esg-card esg-s">
+        <div class="esg-letter">S</div>
+        <div class="esg-name">Social</div>
+        <ul class="esg-list">
+          <li>Refugee &amp; migration policy</li>
+          <li>Gendered vulnerabilities in fragile states</li>
+          <li>Labour rights in global supply chains</li>
+          <li>Community impact &amp; social license</li>
+          <li>Development outcomes &amp; inequality</li>
+        </ul>
+      </div>
+      <div class="esg-card esg-g">
+        <div class="esg-letter">G</div>
+        <div class="esg-name">Governance</div>
+        <ul class="esg-list">
+          <li>Institutional quality &amp; state capacity</li>
+          <li>Regulatory risk &amp; policy uncertainty</li>
+          <li>Corruption, accountability &amp; transparency</li>
+          <li>Corporate governance in emerging markets</li>
+          <li>OSINT-driven governance monitoring</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="research" style="padding:80px 5%">
+  <div class="section-inner">
+    <p class="section-label reveal">Research Interests</p>
+    <h2 class="section-title reveal">Areas of Focus</h2>
+    <div class="research-grid reveal">
+      <div class="research-item">
+        <div class="research-num">01</div>
+        <div class="research-text"><strong>Indo-Pacific Strategy &amp; China's Rise</strong>India's regional positioning, quad dynamics, and the evolving balance of power.</div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">02</div>
+        <div class="research-text"><strong>Geopolitics of Technology</strong>Semiconductors, AI governance, and the politics of global supply chains.</div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">03</div>
+        <div class="research-text"><strong>Political Risk &amp; Strategic Affairs</strong>Scenario analysis, early warning, and decision-relevant intelligence.</div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">04</div>
+        <div class="research-text"><strong>Conflict, Peacebuilding &amp; Humanitarian Crises</strong>Post-conflict governance, civilian protection, and humanitarian systems.</div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">05</div>
+        <div class="research-text"><strong>Migration, Displacement &amp; Refugee Policy</strong>Forced displacement, statelessness, and protection frameworks.</div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">06</div>
+        <div class="research-text"><strong>Development Policy &amp; Global South Dynamics</strong>State capacity, aid effectiveness, and South-South cooperation.</div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">07</div>
+        <div class="research-text"><strong>Climate Security &amp; ESG Transitions</strong>Physical and transition risks, net-zero trajectories, and sustainability governance.</div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">08</div>
+        <div class="research-text"><strong>OSINT &amp; Data-Driven Geopolitical Analysis</strong>Open-source intelligence methods for tracking political and security developments.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding:80px 5%;background:var(--navy2);border-top:1px solid var(--border)">
+  <div class="section-inner">
+    <p class="section-label reveal">About</p>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <h2 class="section-title" style="margin-bottom:1.5rem">Anjali Tripathi</h2>
+        <p>I am a geopolitical and policy analyst working at the intersection of global affairs, governance, conflict, and development — with a growing specialisation in ESG, corporate sustainability, and the political economy of climate risk.</p>
+        <p>I hold a Master's in Conflict Management and Development from Banaras Hindu University, where my research focused on post-conflict migration, refugee policy, and gendered vulnerabilities through fieldwork with Rohingya communities in Delhi.</p>
+        <p>My experience spans policy research, political risk assessment, and governance analysis. I approach complex issues through structured, evidence-based frameworks — combining international relations theory, political economy, and development studies to produce decision-relevant insights.</p>
+        <p>I am particularly interested in how ESG frameworks intersect with geopolitical realities: how climate stress amplifies conflict, how governance deficits create ESG blind spots, and how supply chain politics reshapes corporate sustainability strategies.</p>
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+          <p style="font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.8rem">Education</p>
+          <p style="color:var(--cream);font-size:0.88rem">MA Conflict Management &amp; Development · Banaras Hindu University</p>
+          <p style="color:var(--muted);font-size:0.82rem;margin-top:0.3rem">New Delhi, India</p>
+        </div>
+      </div>
+      <div class="contact-card" id="contact">
+        <h3 class="contact-title">Get in Touch</h3>
+        <p class="contact-sub">Open to research, consulting, and policy work in ESG, geopolitics, and governance.</p>
+        <a href="mailto:anhjhali@gmail.com" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="contact-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          anhjhali@gmail.com
+        </a>
+        <a href="https://linkedin.com" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="contact-icon"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn Profile
+        </a>
+        <a href="#" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="contact-icon"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          Download Resume
+        </a>
+        <a href="mailto:anhjhali@gmail.com" class="contact-cta">Start a Conversation</a>
+        <div style="margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.75rem;color:var(--muted);line-height:1.6">
+          📍 New Delhi, India<br/>
+          Open to: Remote · Consulting · Research roles
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Anjali Tripathi</div>
+    <div class="footer-text">Geopolitics · ESG · Policy · Risk · New Delhi</div>
+    <div class="footer-text">2025</div>
+  </div>
+</footer>
+
+<script>
+// Particles
+const container = document.getElementById('particles');
+for(let i=0;i<25;i++){
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.cssText = `left:${Math.random()*100}%;animation-duration:${8+Math.random()*12}s;animation-delay:${Math.random()*10}s;opacity:0;background:${Math.random()>0.5?'#52b788':'#c8972a'}`;
+  container.appendChild(p);
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
